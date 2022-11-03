@@ -102,9 +102,8 @@
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
-            <!-- <li class="active"><a href="#">Home</a></li> -->
-            <li *ngFor="let item of dashBoardNavItems; let i = index" [attr.data-index]="i">
-              <a routerLink={{item?.path}}>{{item?.name}}</a>
+            <li routerLinkActive="active" *ngFor="let item of dashBoardNavItems; let i = index" [attr.data-index]="i">
+              <a routerLink={{item?.path}} class="active">{{item?.name}}</a>
             </li>
             <!-- <li><a href="#">Pages</a>
               <ul class="header__menu__dropdown">
