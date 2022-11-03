@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  dashBoardNavItems = [
+    { name: "Analítica", path: "analítica" },
+    { name: "Inventario", path: "inventario" },
+    { name: "Proveedores", path: "proveedor" },
+    { name: "Clientes", path: "clientes" },
+    { name: "Ventas", path: "ventas" },
+    { name: "Compras", path: "compras" },      
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
