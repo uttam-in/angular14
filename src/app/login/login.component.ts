@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         this.ventaService.loginUser(submitPayload).subscribe((response) => {
             if(response?.accessToken){
                 localStorage.setItem('token',response?.accessToken);
-                this.router.navigate(['/home']);
+                this.router.navigate(['/dashboard']);
                 this.toastr.success('Success!', 'User logged in');
             }     
         },
