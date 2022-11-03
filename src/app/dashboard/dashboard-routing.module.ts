@@ -40,9 +40,10 @@ const routes: Routes = [
       {
         path: 'compras',
         component: ComprasComponent
-      }
+      },
+      { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
     ]
-  }
+  }  
 ];
 
 @NgModule({
