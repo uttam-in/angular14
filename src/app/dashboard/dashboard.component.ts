@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { VentaService } from '../services/VentaService';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,9 +20,15 @@ export class DashboardComponent implements OnInit {
 
   navTitle = "Bienvenido Al Sistema";
 
-  constructor() { }
+  constructor(private ventaService: VentaService,
+    private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this.ventaService.logout();
+    this.router.navigate(['/']);
   }
 
 }
