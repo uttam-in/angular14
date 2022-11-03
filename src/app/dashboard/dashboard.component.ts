@@ -16,6 +16,8 @@ export class DashboardComponent implements OnInit {
     { name: "Compras", path: "compras" },      
   ]
 
+  navTitle = "Bienvenido Al Sistema";
+
   constructor() { }
 
   ngOnInit(): void {
