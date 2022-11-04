@@ -1,0 +1,173 @@
+<div class="card bg-dark text-white">
+    <div class="card-header"> {{titulo}}</div>
+    <div class="card-body">
+
+        <form #clienteForm ="ngForm">
+            <div class="form-group row">
+                <label for="nombreNegocio" class="col-form-label col-sm-2">Nombre del Negocio</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nombreNegocio" name="nombreNegocio" #nombreNegocio="ngModel">
+                    <div class="alert alert-danger" *ngIf="nombreNegocio.invalid && (nombreNegocio.dirty || nombreNegocio.touched)" >
+                        <div *ngIf="nombreNegocio.errors?.['required']">
+                            El Nombre del negocio es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="telefonoNegocio" class="col-form-label col-sm-2">Telefono del Negocio</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.telefonoNegocio" name="telefonoNegocio" #telefonoNegocio="ngModel">
+                    <div class="alert alert-danger" *ngIf="telefonoNegocio.invalid && (telefonoNegocio.dirty || telefonoNegocio.touched)" >
+                        <div *ngIf="telefonoNegocio.errors?.['required']">
+                            El telefono del negocio es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="nombreDueno" class="col-form-label col-sm-2">Nombre del Dueño</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nombreDueno" name="nombreDueno" #nombreDueno="ngModel">
+                    <div class="alert alert-danger" *ngIf="nombreDueno.invalid && (nombreDueno.dirty || nombreDueno.touched)" >
+                        <div *ngIf="nombreDueno.errors?.['required']">
+                            El Nombre del dueño es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="telefonoDueno" class="col-form-label col-sm-2">Telefono del dueño</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.telefonoDueno" name="telefonoDueno" #telefonoDueno="ngModel">
+                    <div class="alert alert-danger" *ngIf="telefonoDueno.invalid && (telefonoDueno.dirty || telefonoDueno.touched)" >
+                        <div *ngIf="telefonoDueno.errors?.['required']">
+                            El telefono del dueño es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="nombreEncargado" class="col-form-label col-sm-2">Nombre del Encargado</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nombreEncargado" name="nombreEncargado" #nombreEncargado="ngModel">
+                    <div class="alert alert-danger" *ngIf="nombreEncargado.invalid && (nombreEncargado.dirty || nombreEncargado.touched)" >
+                        <div *ngIf="nombreEncargado.errors?.['required']">
+                            El Nombre del encargado es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="telefonoEncargado" class="col-form-label col-sm-2">Telefono del encargado</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.telefonoEncargado" name="telefonoEncargado" #telefonoEncargado="ngModel">
+                    <div class="alert alert-danger" *ngIf="telefonoEncargado.invalid && (telefonoEncargado.dirty || telefonoEncargado.touched)" >
+                        <div *ngIf="telefonoEncargado.errors?.['required']">
+                            El telefono del encargado es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="direccion" class="col-form-label col-sm-2">Direccion</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.direccion" name="direccion" #direccion="ngModel">
+                    <div class="alert alert-danger" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)" >
+                        <div *ngIf="direccion.errors?.['required']">
+                            La direccion del negocio es requerida.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="nombreFacturacion" class="col-form-label col-sm-2">Nombre de Facturación</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nombreFacturacion" name="nombreFacturacion" #nombreFacturacion="ngModel">
+                    <div class="alert alert-danger" *ngIf="nombreFacturacion.invalid && (nombreFacturacion.dirty || nombreFacturacion.touched)" >
+                        <div *ngIf="nombreFacturacion.errors?.['required']">
+                            El nombre de Facturación es requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="nitFacturacion" class="col-form-label col-sm-2">Precio de venta</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nitFacturacion" name="nitFacturacion" #nitFacturacion="ngModel">
+                    <div class="alert alert-danger" *ngIf="nitFacturacion.invalid && (nitFacturacion.dirty || nitFacturacion.touched)" >
+                        <div *ngIf="nitFacturacion.errors?.['required']">
+                            El nit de Facturación es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="empresaTransporte" class="col-form-label col-sm-2">Empresa de Transporte</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.empresaTransporte" name="empresaTransporte" #empresaTransporte="ngModel">
+                    <div class="alert alert-danger" *ngIf="empresaTransporte.invalid && (empresaTransporte.dirty || empresaTransporte.touched)" >
+                        <div *ngIf="empresaTransporte.errors?.['required']">
+                            La empresa de transporte es requerida.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="email" class="col-form-label col-sm-2">Email</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.email" name="email" #email="ngModel">
+                    <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)" >
+                        <div *ngIf="email.errors?.['required']">
+                            El email es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" role="button" (click)="create()"  *ngIf="!cliente.codigo else elseBlock" [disabled]="!clienteForm.form.valid">Crear</button>
+
+                    <ng-template #elseBlock>
+                        <button class="btn btn-primary" role="button" (click)="update()" [disabled]="!clienteForm.form.valid" >Editar</button>
+                    </ng-template>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+

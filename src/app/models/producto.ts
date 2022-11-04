@@ -9,5 +9,5 @@ export class Producto {
     fecha: string | undefined;
     gramos: string | undefined;
     precioCompra: number | undefined;
-    precioVenta: number | undefined;
+    precioVenta!: number;
 }

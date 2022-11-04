@@ -1,1 +1,125 @@
-<p>ventas works!</p>
+<div class="container mt-3 mb-4 ">
+    <h1 class="text-center">Modulo de Ventas</h1>
+</div>
+
+
+<div class="container-fluid">
+
+    <form>
+        <div [formGroup]="ventaForm">
+            <div class="row">
+                <div class="col-3 border-right">
+                    <div class="row">
+                        <h5 class="pl-4">Ventas Details</h5>
+                    </div>
+
+                    <div class="col-sm">
+                        <ng-select formControlName="cliente">
+                            <ng-option *ngFor="let client of clientes" [value]="client.codigo">{{client.nombreNegocio}}
+                            </ng-option>
+                        </ng-select>
+                    </div>
+
+                    <br />
+
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" formControlName="fecha" placeholder="yyyy-mm-dd" name="dp"
+                                    ngbDatepicker #d="ngbDatepicker">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                                        type="button">
+                                        <i class="fa fa-calendar"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm pt-2">
+                        <ng-select formControlName="eStatus">
+                            <ng-option *ngFor="let st of statusData" [value]="st.id">{{st.status}}</ng-option>
+                        </ng-select>
+                    </div>
+
+                </div>
+
+                <div class="col-9 pl-4">
+                    <div class="row">
+                        <h5 class="pl-4">Producto Details</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <ng-select [(ngModel)]="selectedProduct" [ngModelOptions]="{standalone: true}">
+                                <ng-option *ngFor="let client of productos" [value]="client.codigo">{{client.nombre}}
+                                </ng-option>
+                            </ng-select>
+                        </div>
+                        <div class="col-2"><label class="float-end mt-2" for="exampleInputEmail1">Quantity:</label>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input type="number" [(ngModel)]="quantityProduct" [ngModelOptions]="{standalone: true}"
+                                    class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-1 pt-1">
+                            <button (click)="onAddProduct()" [disabled]="!this.selectedProduct||!this.quantityProduct"
+                                class="btn btn-success btn-sm" title="Add Product">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Product Id</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Units</th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of productCartList; let i = index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{product.id}}</td>
+                                    <td>{{product.name}}</td>
+                                    <td>
+                                        <input type="number" (keyup)="onProductEdit($event,i,product)"
+                                            class="form-control" value={{product.quantity}}>
+                                    </td>
+                                    <td>{{product.totalCost | number:'1.2-2'}} $</td>
+                                    <td><button type="button" (click)="onDeleteProduct(i)"
+                                            class="btn btn-danger btn-sm">
+                                            <i class="fa fa-times"></i>
+                                        </button></td>
+                                <tr>
+                                <tr>
+                                    <td colspan="3"></td>
+                                    <th>Total Cost</th>
+                                    <th>{{totalCostSum | number:'1.2-2'}} $</th>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-9"></div>
+                <div class="col-3">
+                    <button type="submit" (click)="ventaFormSubmit()" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

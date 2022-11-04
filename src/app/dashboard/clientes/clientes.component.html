@@ -1,1 +1,68 @@
-<p>clientes works!</p>
+<div class="container mt-3 mb-4 ">
+    <h1 class="text-center">Modulo de Clientes</h1>
+</div>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-outline">
+                <h3>Buscar Cliente:</h3>
+                <input type="search" id="form1" class="form-control" placeholder="Ingrese el nombre del negocio o el nit de facturación" aria-label="Search" [(ngModel)]="filtrocliente" name="filtrocliente"/>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-5">
+            <h3>Crear Cliente</h3>
+            <div class="my-2 text-left">
+                <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/crear-cliente/crear-cliente/crear-cliente']">Crear Cliente</button>
+            </div>
+        </div>
+   </div>
+
+    <div class="container mt-3">
+        <table class="table table-bordered table-striped" >
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre del Negocio</th>
+                    <th>Telefono del Negocio</th>
+                    <th>Nombre del dueño</th>
+                    <th>Telefono del dueño</th>
+                    <th>Nombre del encargado</th>
+                    <th>Telefono del encargado</th>
+                    <th>Direccion</th>
+                    <th>Nombre Facturación</th>
+                    <th>Nit de Facturación</th>
+                    <th>Empresa de Transporte</th>
+                    <th>Email</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let cliente of clientes | filtrocliente: filtrocliente | paginate: config">
+                    <td>{{ cliente.codigo }}</td>
+                    <td>{{ cliente.nombreNegocio }}</td>
+                    <td>{{ cliente.telefonoNegocio }}</td>
+                    <td>{{ cliente.nombreDueno }}</td>
+                    <td>{{ cliente.telefonoDueno }}</td>
+                    <td>{{ cliente.nombreEncargado }}</td>
+                    <td>{{ cliente.telefonoEncargado }}</td>
+                    <td>{{ cliente.direccion }}</td>
+                    <td>{{ cliente.nombreFacturacion }}</td>
+                    <td>{{ cliente.nitFacturacion }}</td>
+                    <td>{{ cliente.empresaTransporte }}</td>
+                    <td>{{ cliente.email }}</td>
+                    <td>
+                        <button type="button" name="Editar" [routerLink]="['/clientes/crear-cliente/crear-cliente/crear-cliente', cliente.codigo]" class="btn btn-primary">Editar</button>
+                    </td>
+    
+                </tr>
+          </tbody>
+        </table>
+    
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+</div>
