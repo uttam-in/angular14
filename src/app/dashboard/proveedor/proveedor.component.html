@@ -1,1 +1,56 @@
-<p>proveedor works!</p>
+<div class="container mt-3 mb-4 ">
+    <h1 class="text-center">Modulo de Proveedores</h1>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-outline">
+                    <h3>Buscar Proveedor</h3>
+                    <input type="search" id="form1" class="form-control" placeholder="Ingrese el codigo, nombre o descripción del proveedor" aria-label="Search" [(ngModel)]="filtroproveedor" name="filtroproveedor">
+                </div>
+            </div>
+        
+            <div class="col-md-5">
+                <h3>Registrar Proveedor</h3>
+                <div class="my-2 text-left">
+                    <button class="btn btn-rounded btn-primary" type="button"  [routerLink]="['/proveedor/crear-proveedor/crear-proveedor']">Registar</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="container mt-3">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nit</th>
+                <th>Nombre Vendedor</th>
+                <th>Telefono Vendedor</th>
+                <th>Nombre Empresa</th>
+                <th>Telefono Empresa</th>
+                <th>Direccion</th>
+                <th>Fecha de Relación Comercial</th>
+                <th>Descripción</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let proveedor of proveedores | filtroproveedor: filtroproveedor">
+                <td>{{proveedor.nit}}</td>
+                <td>{{proveedor.nombreVendedor}}</td>
+                <td>{{proveedor.telefonoVendedor}}</td>
+                <td>{{proveedor.nombreEmpresa}}</td>
+                <td>{{proveedor.telefonoEmpresa}}</td>
+                <td>{{proveedor.direccion}}</td>
+                <td>{{proveedor.fechaRelacionComercial}}</td>
+                <td>{{proveedor.descripcion}}</td>
+                <td> 
+                    <button type="button" name="Editar"  [routerLink]="['/proveedor/editar-proveedor/editar-proveedor', proveedor.nit]" class="btn btn-primary">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

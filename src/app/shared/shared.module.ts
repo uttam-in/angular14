@@ -2,18 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FiltroclientePipe } from '../pipes/filtrocliente.pipe';
 import { FiltroproductoPipe } from '../pipes/filtroproducto.pipe';
+import { FiltroproveedorPipe } from '../pipes/filtroproveedor.pipe';
 
 @NgModule({
   declarations: [
     FiltroclientePipe,
-    FiltroproductoPipe
+    FiltroproductoPipe,
+    FiltroproveedorPipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
     FiltroclientePipe,
-    FiltroproductoPipe
+    FiltroproductoPipe,
+    FiltroproveedorPipe
   ]
 })
 export class SharedModule { 

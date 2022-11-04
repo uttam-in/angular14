@@ -16,7 +16,7 @@ export class ProductoService {
 
   constructor(private http:HttpClient) { 
     const {apiURL} = basePath;
-    this.urlEndpoint = apiURL+"productos";
+    this.urlEndpoint = apiURL+"api/productos";
   }
 
   getProductos(): Observable <Producto[]>{  //Aqui agregué el parametro de busqueda
