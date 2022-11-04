@@ -124,7 +124,7 @@ export class VentasComponent implements OnInit {
   selectedClient: number | undefined;
   selectedStatus: number | undefined;
   selectedProduct: number | undefined;
-  quantityProduct: number | undefined;
+  quantityProduct: number = 0;
   totalCostSum: number = 0;
 
   constructor(
