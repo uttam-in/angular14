@@ -1,23 +1,19 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FiltroclientePipe } from './pipes/filtrocliente.pipe';
-import { FiltroproductoPipe } from './pipes/filtroproducto.pipe';
 import { AuthGuard } from './services/auth.guard';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // pipes
-    FiltroclientePipe,
-    FiltroproductoPipe,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +23,7 @@ import { AuthGuard } from './services/auth.guard';
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    SharedModule.forRoot(), // make pipes and services accesible
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

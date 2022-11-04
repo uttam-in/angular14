@@ -4,14 +4,23 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './home/home.component';
-import { InventarioComponent } from './inventario/inventario.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { VentasComponent } from './ventas/ventas.component';
 import { ComprasComponent } from './compras/compras.component';
-
+import { FormsModule } from '@angular/forms';
+import { InventarioComponent } from './inventario/inventario.component';
+import { SharedModule } from '../shared/shared.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    FormsModule,
+    SharedModule,
+    NgxPaginationModule,
+  ],
   declarations: [
     DashboardComponent,
     HomeComponent,
@@ -19,11 +28,8 @@ import { ComprasComponent } from './compras/compras.component';
     ProveedorComponent,
     ClientesComponent,
     VentasComponent,
-    ComprasComponent
+    ComprasComponent,
   ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule
-  ]
+
 })
 export class DashboardModule { }

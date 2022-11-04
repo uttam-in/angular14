@@ -1,0 +1,117 @@
+<div class="card bg-dark text-white">
+    <div class="card-header"> {{titulo}}</div>
+    <div class="card-body">
+
+        <form #productoForm ="ngForm">
+            <div class="form-group row">
+                <label for="nombre" class="col-form-label col-sm-2">Nombre Producto</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="producto.nombre" name="nombre" #nombre="ngModel">
+                    <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" >
+                        <div *ngIf="nombre.errors?.['required']">
+                            Nombre es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="descripcion" class="col-form-label col-sm-2">Descripcion</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="producto.descripcion" name="descripcion" #descripcion="ngModel">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="existencia" class="col-form-label col-sm-2">Existencia</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" [(ngModel)]="producto.existencia" name="existencia" #existencia="ngModel">
+                    <div class="alert alert-danger" *ngIf="existencia.invalid && (existencia.dirty || existencia.touched)" >
+                        <div *ngIf="existencia.errors?.['required']">
+                            La existencia es requerida
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="color" class="col-form-label col-sm-2">Color</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="producto.color" name="color" #color="ngModel">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="marca" class="col-form-label col-sm-2">Marca</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="producto.marca" name="marca" #marca="ngModel">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="medida" class="col-form-label col-sm-2">Medida</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="producto.medida" name="medida" #medida="ngModel">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="fecha" class="col-form-label col-sm-2">Fecha</label>
+                <div class="col-sm-6">
+                    <input type="date" class="form-control" [(ngModel)]="producto.fecha" name="fecha" #fecha="ngModel">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="precioCompra" class="col-form-label col-sm-2">Precio de compra</label>
+                <div class="col-sm-6">
+                    <input type="number" placeholder="0.00" step="0.01" min="0" class="form-control" [(ngModel)]="producto.precioCompra" name="precioCompra" #precioCompra="ngModel">
+                    <div class="alert alert-danger" *ngIf="precioCompra.invalid && (precioCompra.dirty || precioCompra.touched)" >
+                        <div *ngIf="existencia.errors?.['required']">
+                            El precio de compra es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="precioVenta" class="col-form-label col-sm-2">Precio de venta</label>
+                <div class="col-sm-6">
+                    <input type="number" placeholder="0.00" step="0.01" min="0" class="form-control" [(ngModel)]="producto.precioVenta" name="precioVenta" #precioVenta="ngModel">
+                    <div class="alert alert-danger" *ngIf="precioVenta.invalid && (precioVenta.dirty || precioVenta.touched)" >
+                        <div *ngIf="existencia.errors?.['required']">
+                            El precio de Venta es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" role="button" (click)="create()"  *ngIf="!producto.codigo else elseBlock" [disabled]="!productoForm.form.valid">Crear</button>
+
+                    <ng-template #elseBlock>
+                        <button class="btn btn-primary" role="button" (click)="update()" [disabled]="!productoForm.form.valid" >Editar</button>
+                    </ng-template>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
