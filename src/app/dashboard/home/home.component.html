@@ -1,1 +1,66 @@
-<p>home works!</p>
+<main class="container">
+    <div class="d-flex align-items-center p-3 my-3 bg-purple rounded shadow-sm">
+        <div class="row">
+            <div class="col">
+                <google-chart [title]="chart.title" [type]="chart.type" [data]="chart.data"
+                    [columns]="chart.columnNames" [options]="chart.options">
+                </google-chart>
+            </div>
+            <div class="col">
+                <google-chart [title]="barchart.title" [type]="barchart.type" [data]="barchart.data"
+                    [columns]="barchart.columnNames" [options]="barchart.options">
+                </google-chart>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="pb-2 mb-0">Top Ventas</h6>
+        <div class="d-flex text-muted pt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">codigo_cliente</th>
+                        <th scope="col">total</th>
+                        <th scope="col">created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of topFiveVentas; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{product.codigo_cliente}}</td>
+                        <td>{{product.total}}</td>
+                        <td>{{product.created}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="pb-2 mb-0">Top Compras</h6>
+        <div class="d-flex text-muted pt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">nit_proveedor</th>
+                        <th scope="col">total</th>
+                        <th scope="col">created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of topFiveCompra; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{product?.nit_proveedor}}</td>
+                        <td>{{product?.total}}</td>
+                        <td>{{product?.created}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</main>

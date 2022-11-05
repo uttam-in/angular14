@@ -34,7 +34,7 @@ export class VentaService {
   }
 
   public getDashboardDetails(): Observable<any> {
-    const url = this.apiUrl + 'dashboard-pay/';
+    const url = this.apiUrl + 'api/dashboard-pay/';
     return this.http.get<any>(url, { headers: this.httpHeaders })
   }
 

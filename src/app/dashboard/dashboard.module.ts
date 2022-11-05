@@ -12,6 +12,7 @@ import { InventarioComponent } from './inventario/inventario.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProveedorComponent } from './proveedor/proveedor.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { ProveedorComponent } from './proveedor/proveedor.component';
     FormsModule,
     SharedModule,
     NgxPaginationModule,
+    GoogleChartsModule,
   ],
   declarations: [
     DashboardComponent,
