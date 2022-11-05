@@ -18,6 +18,7 @@ import { Observable } from 'rxjs/internal/Observable';
         setHeaders: {  
           Authorization: `Bearer ${localStorage.getItem('token')}`  
         }  
-      });    return next.handle(request);  
+      });    
+      return next.handle(request);  
     }  
   }  

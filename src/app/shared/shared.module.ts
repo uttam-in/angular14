@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FiltroclientePipe } from '../pipes/filtrocliente.pipe';
 import { FiltroproductoPipe } from '../pipes/filtroproducto.pipe';
@@ -6,6 +6,7 @@ import { FiltroproveedorPipe } from '../pipes/filtroproveedor.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -18,8 +19,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    NgbModule
+    NgbModule,
+    NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
     FiltroclientePipe,
     FiltroproductoPipe,
@@ -27,7 +30,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    NgbModule
+    NgbModule,
+    NgxSpinnerModule // change the class in app.component.html and angular.json css
   ]
 })
 export class SharedModule { 

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-inventario',
@@ -18,14 +19,21 @@ export class InventarioComponent implements OnInit {
   config: any;
   
 
-  constructor(private productoService: ProductoService) { 
+  constructor(
+    private productoService: ProductoService,
+    private spinner: NgxSpinnerService
+    ) { 
     
 
   }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.productoService.getProductos().subscribe(
-      productos => this.productos = productos      
+      productos => {
+        this.productos = productos;
+        this.spinner.hide();
+      }
     );
 
     this.config = {
