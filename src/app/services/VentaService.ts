@@ -25,7 +25,7 @@ export class VentaService {
   }
 
   public loginUser(payload: any): Observable<any> {
-    const url = this.apiUrl + 'auth/signin';
+    const url = this.apiUrl + 'api/auth/signin';
     return this.http.post<any>(url, payload, { headers: this.httpHeaders })
   }
 
