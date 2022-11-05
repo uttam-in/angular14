@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Producto } from '../producto';
-import { ProductoService } from '../producto.service';
+import { Producto } from 'src/app/models/producto';
+import { ProductoService } from 'src/app/services/producto.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-crear-producto',
@@ -10,11 +11,11 @@ import { ProductoService } from '../producto.service';
 })
 export class CrearProductoComponent implements OnInit {
 
-  public producto?: Producto = new Producto();
+  public producto: Producto = new Producto();
   public titulo:string =  "Crear Producto";
 
   constructor(private productoService: ProductoService, 
-    private router:Router, private activatedRoute: ActivatedRoute ) { }
+    private router:Router, private activatedRoute: ActivatedRoute,private modalService: NgbModal ) { }
 
   ngOnInit(): void {
     this.cargarProducto();
@@ -35,15 +36,19 @@ export class CrearProductoComponent implements OnInit {
   create(): void{
     this.productoService.create(this.producto)
     .subscribe(producto => {
-        this.router.navigate(['/inventario'])
+      this.modalService.dismissAll();
       }
     );
+  }
+
+  close(){
+    this.modalService.dismissAll()
   }
 
   update():void{
     this.productoService.update(this.producto)
     .subscribe(producto =>{
-        this.router.navigate(['/inventario'])
+      this.modalService.dismissAll();
     })
   }
 }

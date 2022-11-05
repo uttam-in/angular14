@@ -13,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { CrearProductoComponent } from './inventario/crear-producto/crear-producto.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
     ClientesComponent,
     VentasComponent,
     ComprasComponent,
+    CrearProductoComponent,
   ],
 
 })
