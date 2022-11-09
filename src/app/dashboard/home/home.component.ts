@@ -48,6 +48,9 @@ constructor(private ventaService: VentaService) {
 topFiveVentas:any = []
 topFiveCompra:any = []
 
+topFiveDalleVentas:any = []
+topFiveDalleCompra:any = []
+
 ngOnInit(): void {
     this.ventaService.getDashboardDetails().subscribe(response=>{
         console.log(response);
@@ -61,7 +64,15 @@ ngOnInit(): void {
         ]
         this.topFiveVentas = response?.venta_top5
         this.topFiveCompra = response?.compra_top5
-    })
+    });
+
+    this.ventaService.getCompraCount().subscribe(response=>{
+        this.topFiveDalleVentas = response;
+    });
+
+    this.ventaService.getVentaCount().subscribe(response=>{
+        this.topFiveDalleCompra = response;
+    });
 }
 
 

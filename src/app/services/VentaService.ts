@@ -24,10 +24,20 @@ export class VentaService {
     return this.http.get<any>(url)
   }
 
+  public getVentaCount(): Observable<any> {
+    const url = this.apiUrl + 'api/create-venta-count/';
+    return this.http.get<any>(url)
+  }
+
   public createCompra(venta: any): Observable<any> {
     const url = this.apiUrl + 'api/create-compra/';
     return this.http.post<any>(url, venta, { headers: this.httpHeaders })
   }
+
+  public getCompraCount(): Observable<any> {
+    const url = this.apiUrl + 'api/create-compra-count/';
+    return this.http.get<any>(url)
+  }    
 
   public getCompra(): Observable<any> {
     const url = this.apiUrl + 'api/create-compra/';

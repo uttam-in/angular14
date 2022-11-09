@@ -63,4 +63,65 @@
     </div>
 
 
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="pb-2 mb-0">Top Dalle Ventas</h6>
+        <div class="d-flex text-muted pt-3">
+            <table class="table">
+                <thead>
+                    <tr>                        
+                        <th scope="col">#</th>
+                        <th scope="col">cantidad</th>
+                        <th scope="col">compra_codigo</th>
+                        <th scope="col">created</th>
+                        <th scope="col">precio</th>
+                        <th scope="col">producto_codigo</th>
+                        <th scope="col">subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of topFiveDalleVentas; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{product?.cantidad}}</td>
+                        <td>{{product?.compra_codigo}}</td>
+                        <td>{{product?.created}}</td>
+                        <td>{{product?.precio}}</td>
+                        <td>{{product?.producto_codigo}}</td>
+                        <td>{{product?.subtotal}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="pb-2 mb-0">Top Dalle Compras</h6>
+        <div class="d-flex text-muted pt-3">
+            <table class="table">
+                <thead>
+                    <tr>                     
+                        <th scope="col">#</th>
+                        <th scope="col">cantidad</th>
+                        <th scope="col">created</th>
+                        <th scope="col">precio</th>
+                        <th scope="col">producto_codigo</th>
+                        <th scope="col">subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of topFiveDalleCompra; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{product?.cantidad}}</td>
+                        <td>{{product?.created}}</td>
+                        <td>{{product?.precio}}</td>
+                        <td>{{product?.producto_codigo}}</td>
+                        <td>{{product?.subtotal}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
 </main>
