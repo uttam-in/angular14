@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProveedorService } from 'src/app/services/proveedor.service';
 import { Proveedor } from '../../../../models/proveedor';
-import { ProveedorService } from '../../proveedor.service';
 
 @Component({
   selector: 'app-editar-proveedor',
@@ -10,7 +10,7 @@ import { ProveedorService } from '../../proveedor.service';
 })
 export class EditarProveedorComponent implements OnInit {
 
-  public proveedor?: Proveedor = new Proveedor();
+  public proveedor: Proveedor = new Proveedor();
   public titulo:string = "Editar Proveedor";
   
   constructor(private proveedorService: ProveedorService, 

@@ -14,6 +14,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { CrearProductoComponent } from './inventario/crear-producto/crear-producto.component';
+import { EditarProveedorComponent } from './proveedor/editar-proveedor/editar-proveedor/editar-proveedor.component';
+import { CrearProveedorComponent } from './proveedor/crear-proveedor/crear-proveedor.component';
 
 @NgModule({
   imports: [
@@ -33,6 +35,8 @@ import { CrearProductoComponent } from './inventario/crear-producto/crear-produc
     VentasComponent,
     ComprasComponent,
     CrearProductoComponent,
+    EditarProveedorComponent,
+    CrearProveedorComponent,
   ],
 
 })

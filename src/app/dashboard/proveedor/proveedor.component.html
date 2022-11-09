@@ -54,3 +54,16 @@
 
     <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
 </div>
+
+
+<ng-template #inventarioModalAdd let-modal>
+    <div class="modal-body">
+        <app-crear-proveedor></app-crear-proveedor>
+    </div>
+  </ng-template>
+
+  <ng-template #inventarioModalEdit let-modal>
+    <div class="modal-body">
+        <app-editar-proveedor></app-editar-proveedor>
+    </div>
+  </ng-template>  
