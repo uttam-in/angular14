@@ -15,12 +15,12 @@ export class VentaService {
 
 
   public createVenta(venta: any): Observable<any> {
-    const url = this.apiUrl + 'create-venta/';
+    const url = this.apiUrl + 'api/create-venta/';
     return this.http.post<any>(url, venta, { headers: this.httpHeaders })
   }
 
   public createCompra(venta: any): Observable<any> {
-    const url = this.apiUrl + 'create-compra/';
+    const url = this.apiUrl + 'api/create-compra/';
     return this.http.post<any>(url, venta, { headers: this.httpHeaders })
   }
 
