@@ -42,8 +42,9 @@ export class ClientesComponent implements OnInit {
     this.config.currentPage = event;
   }
 
-  open() {
-    this.modalService.open(this.modalContent, {ariaLabelledBy: 'modal-basic-title', size: <any>'xl' }).result.then((result) => {
+  open(data:any) {
+    console.log(data);
+    const modalRef = this.modalService.open(this.modalContent, {ariaLabelledBy: 'modal-basic-title', size: <any>'xl' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

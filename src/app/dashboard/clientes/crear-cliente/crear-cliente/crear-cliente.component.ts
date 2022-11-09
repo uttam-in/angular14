@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ClienteService } from 'src/app/services/cliente.service';
 import { Cliente } from '../../../../models/cliente';
-import { ClienteService } from '../../cliente.service';
 
 @Component({
   selector: 'app-crear-cliente',
@@ -9,6 +9,8 @@ import { ClienteService } from '../../cliente.service';
   styleUrls: ['./crear-cliente.component.css']
 })
 export class CrearClienteComponent implements OnInit {
+
+  @Input() dataToTakeAsInput: any;
 
   public cliente: Cliente = new Cliente();
   public titulo:string = "Crear Cliente";
@@ -24,7 +26,7 @@ export class CrearClienteComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       let codigo = params['codigo']
       if(codigo){
-        this.clienteService.getCliente(codigo).subscribe((cliente => this.cliente = cliente)
+        this.clienteService.getCliente(codigo).subscribe(((cliente:any) => this.cliente = cliente)
         )
       }
     }
@@ -34,7 +36,7 @@ export class CrearClienteComponent implements OnInit {
 
   create(): void{
     this.clienteService.create(this.cliente)
-    .subscribe(cliente => {
+    .subscribe((cliente:any) => {
         this.router.navigate(['/clientes'])
       }
     );
@@ -42,7 +44,7 @@ export class CrearClienteComponent implements OnInit {
 
   update():void{
     this.clienteService.update(this.cliente)
-    .subscribe(cliente =>{
+    .subscribe((cliente:any) =>{
         this.router.navigate(['/clientes'])
     })
   }
