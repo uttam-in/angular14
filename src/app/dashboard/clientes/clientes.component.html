@@ -17,7 +17,7 @@
         <div class="col-md-5">
             <h3>Crear Cliente</h3>
             <div class="my-2 text-left">
-                <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/crear-cliente/crear-cliente/crear-cliente']">Crear Cliente</button>
+                <button class="btn btn-rounded btn-primary" type="button" (click)="open()">Crear Cliente</button>
             </div>
         </div>
    </div>
@@ -66,3 +66,9 @@
         <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
 
 </div>
+
+<ng-template #clientesModal let-modal>
+    <div class="modal-body">
+        <app-crear-producto></app-crear-producto>
+    </div>
+  </ng-template>
