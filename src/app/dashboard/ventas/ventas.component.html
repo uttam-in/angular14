@@ -68,6 +68,7 @@
                         </div>
                         <div class="col-1 pt-1">
                             <button (click)="onAddProduct()" [disabled]="!this.selectedProduct||!this.quantityProduct"
+                            data-toggle="tooltip" data-placement="top"
                                 class="btn btn-success btn-sm" title="Add Product">
                                 <i class="fa fa-plus"></i>
                             </button>
