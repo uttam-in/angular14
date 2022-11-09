@@ -16,6 +16,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { CrearProductoComponent } from './inventario/crear-producto/crear-producto.component';
 import { EditarProveedorComponent } from './proveedor/editar-proveedor/editar-proveedor/editar-proveedor.component';
 import { CrearProveedorComponent } from './proveedor/crear-proveedor/crear-proveedor.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import { CrearProveedorComponent } from './proveedor/crear-proveedor/crear-prove
     CrearProductoComponent,
     EditarProveedorComponent,
     CrearProveedorComponent,
+    HistoryComponent,
   ],
 
 })

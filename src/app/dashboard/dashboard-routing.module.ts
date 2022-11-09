@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ComprasComponent } from './compras/compras.component';
 import { DashboardComponent } from './dashboard.component';
+import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 import { InventarioComponent } from './inventario/inventario.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'compras',
         component: ComprasComponent
+      },
+      {
+        path: 'history',
+        component: HistoryComponent
       },
       { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
     ]

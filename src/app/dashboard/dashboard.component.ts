@@ -15,7 +15,8 @@ export class DashboardComponent implements OnInit {
     { name: "Proveedores", path: "proveedor" },
     { name: "Clientes", path: "clientes" },
     { name: "Ventas", path: "ventas" },
-    { name: "Compras", path: "compras" },      
+    { name: "Compras", path: "compras" },     
+    { name: "History", path: "history" },      
   ]
 
   navTitle = "Bienvenido Al Sistema";

@@ -19,10 +19,20 @@ export class VentaService {
     return this.http.post<any>(url, venta, { headers: this.httpHeaders })
   }
 
+  public getVenta(): Observable<any> {
+    const url = this.apiUrl + 'api/create-venta/';
+    return this.http.get<any>(url)
+  }
+
   public createCompra(venta: any): Observable<any> {
     const url = this.apiUrl + 'api/create-compra/';
     return this.http.post<any>(url, venta, { headers: this.httpHeaders })
   }
+
+  public getCompra(): Observable<any> {
+    const url = this.apiUrl + 'api/create-compra/';
+    return this.http.get<any>(url)
+  }  
 
   public loginUser(payload: any): Observable<any> {
     const url = this.apiUrl + 'api/auth/signin';
