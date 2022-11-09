@@ -1,5 +1,11 @@
-<div class="card bg-dark text-white">
-    <div class="card-header"> {{titulo}}</div>
+<div class="card bg-light">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{titulo}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
     <div class="card-body">
 
         <form #proveedorForm ="ngForm">

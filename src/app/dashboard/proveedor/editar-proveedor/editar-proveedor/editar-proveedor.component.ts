@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProveedorService } from 'src/app/services/proveedor.service';
 import { Proveedor } from '../../../../models/proveedor';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-editar-proveedor',
@@ -13,11 +14,15 @@ export class EditarProveedorComponent implements OnInit {
   public proveedor: Proveedor = new Proveedor();
   public titulo:string = "Editar Proveedor";
   
-  constructor(private proveedorService: ProveedorService, 
+  constructor(private proveedorService: ProveedorService, private modalService: NgbModal,
     private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.cargarProveedor();
+  }
+
+  close(){
+    this.modalService.dismissAll()
   }
 
   cargarProveedor(): void{
@@ -36,7 +41,7 @@ export class EditarProveedorComponent implements OnInit {
     this.proveedorService.create(this.proveedor)
     .subscribe(
       cliente => {
-        this.router.navigate(['/proveedor'])
+        this.modalService.dismissAll();
       }
     );
   }
@@ -44,7 +49,7 @@ export class EditarProveedorComponent implements OnInit {
   update():void{
     this.proveedorService.update(this.proveedor)
     .subscribe(proveedor =>{
-        this.router.navigate(['/proveedor'])
+      this.modalService.dismissAll();
     })
   }
 

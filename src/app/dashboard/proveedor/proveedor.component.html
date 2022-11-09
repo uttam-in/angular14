@@ -13,7 +13,7 @@
             <div class="col-md-5">
                 <h3>Registrar Proveedor</h3>
                 <div class="my-2 text-left">
-                    <button class="btn btn-rounded btn-primary" type="button"  [routerLink]="['/proveedor/crear-proveedor/crear-proveedor']">Registar</button>
+                    <button class="btn btn-rounded btn-primary" type="button" (click)="openAdd()">Registar</button>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                 <td>{{proveedor.fechaRelacionComercial}}</td>
                 <td>{{proveedor.descripcion}}</td>
                 <td> 
-                    <button type="button" name="Editar"  [routerLink]="['/proveedor/editar-proveedor/editar-proveedor', proveedor.nit]" class="btn btn-primary">Editar</button>
+                    <button type="button" name="Editar"  (click)="openEdit()" class="btn btn-primary">Editar</button>
                 </td>
             </tr>
         </tbody>
