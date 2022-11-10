@@ -1,4 +1,4 @@
 const basePath = {
-    apiURL: 'http://localhost:8080/'
+    apiURL: 'https://backend-libreria.herokuapp.com/'
 }
 export default basePath;
